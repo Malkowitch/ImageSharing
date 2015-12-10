@@ -1,0 +1,9 @@
+Social network
+chat program
+4 people
+login
+
+Picture uploading
+instant upload
+downloadable for each person
+show how many have downloaded

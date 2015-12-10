@@ -1,0 +1,29 @@
+﻿@model ImageSharing.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Get))
+{
+    <div>
+        <h3>Existing user?</h3>
+        <input type="text" name="UserName" placeholder="Enter login name" />
+        <input type="password" name="UserPassword" placeholder="Enter password" />
+        <input type="submit" name="Login" value="Log in" />
+    </div>
+}
+
+@using (Html.BeginForm("CreateUser", "Login", FormMethod.Post))
+{
+    <div>
+        <h3>New user?</h3>
+        @Html.TextBoxFor(x => x.Name, new { placeholder = "Enter wanted user name" })
+        @Html.TextBoxFor(x => x.Password, new { placeholder = "Enter wanted password", type="password" })
+        <input type="submit" value="Create User" /><br /><br />
+        <p>
+            @ViewBag.Warning
+        </p>
+    </div>
+}

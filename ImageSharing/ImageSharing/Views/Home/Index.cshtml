@@ -1,0 +1,64 @@
+﻿@model ImageSharing.Models.User
+@{
+    ViewData["Title"] = "Chatting";
+}
+
+<!-- #region People chatting -->
+<div class="boxed">
+    <div class="column">
+        <h2>User 1</h2>
+        <h3>@Model.Name <small>- @Html.ActionLink("sign off", "Logout", "Login")</small></h3> 
+        <ul>
+            <li>
+                <div id="dropzone" class="image">
+                    <img id="loadedimg" alt="Your uploaded picture." base-sixty-four-input />
+                    Drag in here!
+                </div>
+            </li>
+            <li><p id="userdownload">Downloaded: 0/3</p></li>
+            <li><div id="status"></div></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h2>User 2</h2>
+        <h3>1</h3>
+        <ul>
+            <li><div class="image"><img src="#" alt="Upload picture" /></div></li>
+            <li><input type="button" class="btndownload" name="btnDownload" value="Download" /></li>
+            <li><p id="pdownload1" class="pdownload"></p></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h2>User 3</h2>
+        <h3>2</h3>
+        <ul>
+            <li><div class="image"><img src="#" alt="Upload picture" /></div></li>
+            <li><input type="button" class="btndownload" name="btnDownload" value="Download" /></li>
+            <li><p id="pdownload2" class="pdownload"></p></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h2>User 4</h2>
+        <h3>3</h3>
+        <ul>
+            <li><div class="image"><img src="#" alt="Upload picture" /></div></li>
+            <li><input type="button" class="btndownload" name="btnDownload" value="Download" /></li>
+            <li><p id="pdownload3" class="pdownload"></p></li>
+        </ul>
+    </div>
+</div>
+<!-- #endregion -->
+<!-- #region Chat program -->
+<div>
+    <input type="hidden" id="userName" value="@Model.Name" />
+    <div class="chatwindow">
+        <div id="txtWindow" class="chatwindowinput">
+
+        </div>
+        <div class="chatinput">
+            <input type="text" id="txtChat" name="txtChat" class="chattext" />
+            <input type="button" id="btnChat" value="Send" class="chatbutton" />
+        </div>
+    </div>
+</div>
+<!-- #endregion -->
